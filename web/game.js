@@ -42,7 +42,7 @@ function checkWinner(human) {
         dataType   : "json",
         success    : function(resp){
             if (resp == true) {
-                $('.message').html('We have a winner');
+                $('.message').html('We have a winner').show();
             } else if (human)
                 makeAiMove(game);
             }
@@ -50,6 +50,9 @@ function checkWinner(human) {
 }
 
 function makeHumanMove(el, char) {
+    if (el.html() != '') {
+        return;
+    }
     var coords = el.data('coords').split('-');
     el.html(char);
     checkWinner(true);

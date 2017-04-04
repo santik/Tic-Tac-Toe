@@ -11,8 +11,16 @@
 
 .cell {
     height: 100%;
+    font-size: 50px;
+    text-align: center;
 }
 
 .show-grid {
     border: 1px solid;
+}
+
+.message {
+    padding: 5px;
+    display: none;
+    margin: 5px;
 }
