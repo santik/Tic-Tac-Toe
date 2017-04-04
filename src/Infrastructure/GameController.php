@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class GameController
 {
-
     /**
      * @var GameService
      */
@@ -37,29 +36,22 @@ final class GameController
     public function checkStatus(Request $request): Response
     {
         return new JsonResponse(
-            json_encode($this->gameService->checkStatus($this->createGameFieldFromRequest($request))),
+            json_encode($this->gameService->checkStatus(GameField::createFromRequest($request))),
             200,
             [],
             true
         );
     }
-
-    private function createGameFieldFromRequest(Request $request): GameField
-    {
-        return GameField::createFromRequest($request);
-    }
-
 
     public function makeMove(Request $request): Response
     {
-        $newField = $this->gameService->makeMoveNormalized($this->createGameFieldFromRequest($request));
+        $game = $this->gameService->makeMoveNormalized(GameField::createFromRequest($request));
 
         return new JsonResponse(
-            json_encode($newField->toArray()),
+            json_encode($game->toArray()),
             200,
             [],
             true
         );
     }
-
 }

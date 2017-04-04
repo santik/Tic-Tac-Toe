@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Santik\TicTacToe\Domain;
 
+use PHPUnit\Framework\TestCase;
 use Santik\TicTacToe\External\MoveInterface;
 
-class GameServiceTest extends \PHPUnit_Framework_TestCase
+class GameServiceTest extends TestCase
 {
     /**
      * @var GameService

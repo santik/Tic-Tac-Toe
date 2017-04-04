@@ -4,7 +4,7 @@ namespace Santik\TicTacToe\Domain;
 
 class FirstEmptyMoveDecider implements MoveDecider
 {
-    //only finds the first empty cell
+    //only finds the first empty cell and makes move there
     public function decide(GameField $gameField): Coordinates
     {
         foreach ($gameField->toArray() as $x => $row) {
