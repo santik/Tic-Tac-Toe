@@ -12,6 +12,9 @@ To run application use internal php webserver:
 
     cd web; php -S localhost:8000
 
-Start the game in browser by the url
+Start the game use the local url [http://localhost:8000/](http://localhost:8000/).
 
-    http://localhost:8000/
+To test API use the [swagger ui url](http://localhost:8000/swagger-ui/dist/index.html?url=http://localhost:8000/swagger.json#/default).
+    
+    
+    
