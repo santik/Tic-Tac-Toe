@@ -23,10 +23,12 @@
         ],
         "parameters": [
           {
-            "name": "field",
+            "name": "game",
             "in": "body",
             "required": true,
-            "type": "object"
+            "schema": {
+              "$ref": "#/definitions/Game"
+            }
           }
         ],
         "responses": {
@@ -70,10 +72,12 @@
         ],
         "parameters": [
           {
-            "name": "field",
+            "name": "game",
             "in": "body",
             "required": true,
-            "type": "object"
+            "schema": {
+              "$ref": "#/definitions/Game"
+            }
           }
         ],
         "responses": {
@@ -124,6 +128,10 @@
           ]
         }
       }
+    },
+    "Game": {
+      "type": "string",
+      "example": "[[\"x\", \"x\", \"o\"],[\"o\", \"x\", \"o\"],[\"x\", \"o\", \"\"]]"
     }
   }
 }
