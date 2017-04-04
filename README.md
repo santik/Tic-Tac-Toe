@@ -12,3 +12,6 @@ To run application use internal php webserver:
 
     cd web; php -S localhost:8000
 
+Start the game in browser by the url
+
+    http://localhost:8000/
