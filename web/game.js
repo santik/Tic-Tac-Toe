@@ -6,7 +6,6 @@ $(document).ready(function(){
     );
 });
 
-
 function setGame(game) {
 
     console.log(game);
@@ -18,6 +17,7 @@ function setGame(game) {
 
 
 }
+
 function makeAiMove(game) {
     $.ajax({
         url : '/v1/game/makeMove',
@@ -31,6 +31,7 @@ function makeAiMove(game) {
         }
     });
 }
+
 function checkWinner(human) {
     var game = getGameField();
 
@@ -57,7 +58,6 @@ function makeHumanMove(el, char) {
     el.html(char);
     checkWinner(true);
 }
-
 
 function getGameField() {
     var data = [[],[],[]];
