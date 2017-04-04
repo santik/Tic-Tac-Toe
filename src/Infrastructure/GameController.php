@@ -18,9 +18,20 @@ final class GameController
      */
     private $gameService;
 
-    public function __construct(GameService $gameService)
+    /**
+     * @var \Twig_Environment
+     */
+    private $twig;
+
+    public function __construct(GameService $gameService, \Twig_Environment $twig)
     {
         $this->gameService = $gameService;
+        $this->twig = $twig;
+    }
+
+    public function index()
+    {
+        return $this->twig->render('index.twig');
     }
 
     public function checkStatus(Request $request): Response
